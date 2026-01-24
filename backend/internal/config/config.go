@@ -12,11 +12,12 @@ import (
 )
 
 type Config struct {
-	Primary  Primary        `konaf:"primary" vaidate:"required"`
-	Server   ServerConfig   `konaf:"server" vaidate:"required"`
-	Database DatabaseConfig `konaf:"database" vaidate:"required"`
-	Auth     AuthConfig     `konaf:"auth" vaidate:"required"`
-	Redis    RedisConfig    `koanf:"redis" validate:"required"`
+	Primary       Primary              `konaf:"primary" vaidate:"required"`
+	Server        ServerConfig         `konaf:"server" vaidate:"required"`
+	Database      DatabaseConfig       `konaf:"database" vaidate:"required"`
+	Auth          AuthConfig           `konaf:"auth" vaidate:"required"`
+	Redis         RedisConfig          `koanf:"redis" validate:"required"`
+	Integration   IntegrationConfig    `koanf:"integration" validate:"required"`
 	Observability *ObservabilityConfig `koanf:"observability"`
 }
 
@@ -50,6 +51,10 @@ type AuthConfig struct {
 }
 type RedisConfig struct {
 	Address string `koanf:"address" validate:"required"`
+}
+
+type IntegrationConfig struct {
+	ResendAPIKey string `koanf:"resend_api_key" validate:"required"`
 }
 
 func LoadConfig() (*Config, error) {

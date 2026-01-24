@@ -1,0 +1,36 @@
+# Node
+node_modules/
+npm-debug.log*
+pnpm-debug.log*
+yarn-error.log*
+
+# Env
+.env
+.env.local
+!.env.example
+
+# Build
+dist/
+build/
+.next/
+out/
+bin/
+
+# Turbo
+.turbo/
+
+# Go
+*.exe
+*.out
+*.test
+coverage.out
+
+
+# OS
+.DS_Store
+
+# Editor
+.vscode/
+.idea/
+
+go-boilerplate
